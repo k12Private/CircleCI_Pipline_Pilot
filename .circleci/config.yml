@@ -9,10 +9,9 @@ jobs:
     steps:
       - run: echo "Hello World!" > output.txt
       - persist_to_workspace:
-          root: /home/circleci/project 
+          root: /home/circleci
           paths:
-            - output.txt
-  
+            - project  
   print_output_file:
     docker:
       - image: circleci/node:13.8.0
