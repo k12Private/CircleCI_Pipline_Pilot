@@ -9,6 +9,7 @@ jobs:
     steps:
       - run: echo "Hello World!" > output.txt
       - run: pwd 
+      - run: ls
       - persist_to_workspace:
           root: /tmp/dir
           paths:
