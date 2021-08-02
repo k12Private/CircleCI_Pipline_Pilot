@@ -19,7 +19,9 @@ jobs:
     steps:
       - attach_workspace:
           at: /home/circleci/project/output.txt
-      - run: cat output.txt
+      - run: pwd
+      - run: ls
+      - run: cat /home/circleci/project/output.txt
 
 # Orchestrate or schedule a set of jobs
 workflows:
