@@ -1,17 +1,16 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-commands:
-  print_pipeline_id:
-    steps:
-      - run: echo $CIRCLE_WORKFLOW_ID
-
 jobs:
-  print_pipeline_id_job:
+  fail_test_job:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - print_pipeline_id
+      - run: return 1
+      - run: 
+          command: echo "fail test works"
+          when: on_fail
+    
 
 # Orchestrate or schedule a set of jobs
 workflows:
@@ -19,4 +18,4 @@ workflows:
   welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - print_pipeline_id_job
+      - fail_test_job
