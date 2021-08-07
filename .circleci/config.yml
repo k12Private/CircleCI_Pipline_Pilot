@@ -17,7 +17,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - attach_workspace:
-          at: /home/circleci/project/output.txt
+          at: /home/circleci/project
       - run: pwd
       - run: ls
       - run: cat /home/circleci/project/output.txt
