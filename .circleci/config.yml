@@ -7,13 +7,13 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo "Hello World!" > output.txt
+      - run: echo "Hello World!" > /home/circleci/project/output.txt
       - run: pwd
       - run: ls
       - persist_to_workspace:
-          root: /home/circleci
+          root: /home/circleci/project
           paths:
-            - project  
+            - output.txt
   
   print_output_file:
     docker:
